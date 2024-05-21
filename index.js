@@ -18,10 +18,31 @@
 // import '@tensorflow/tfjs-backend-webgl';
 
 // import * as mobilenet from '@tensorflow-models/mobilenet';
+const input = document.getElementById("imagenseleccionada")
+
+function readURL(input) {
+  if (input.files && input.files[0]) { //Revisamos que el input tenga contenido
+    var reader = new FileReader(); //Leemos el contenido
+    
+    reader.onload = function(e) { //Al cargar el contenido lo pasamos como atributo de la imagen de arriba
+      $('#blah').attr('src', e.target.result);
+    }
+    
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#imgInp").change(function() { //Cuando el input cambie (se cargue un nuevo archivo) se va a ejecutar de nuevo el cambio de imagen y se verá reflejado.
+  readURL(this);
+});
+
+
 
 const img = document.getElementById('img');
 const version = 2;
 const alpha = 0.5;
+
+
 
 async function run() {
   // Load the model.
