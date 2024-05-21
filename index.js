@@ -20,7 +20,7 @@
 // import * as mobilenet from '@tensorflow-models/mobilenet';
 
 const input = document.getElementById('imagenseleccionada');
-const mostrar = document.getElementById('img');
+const img = document.getElementById('img');
 const botonint = document.getElementById('botonint');
 const tabla = document.getElementById('tabla')
 
@@ -30,7 +30,7 @@ input.addEventListener('input', () => {
     let reader = new FileReader();
 
     reader.onload = (e) => {
-      mostrar.setAttribute("src", e.target.result)
+      img.setAttribute("src", e.target.result)
     };
 
     reader.readAsDataURL(input.files[0])
@@ -38,7 +38,9 @@ input.addEventListener('input', () => {
 });
 
 botonint.addEventListener('click', async () => {
-  const img = document.getElementById('img');
+  if (input.value.length < 1) return alert('No hay ninguna imagen')
+ 
+
   const version = 2;
   const alpha = 0.5;
 
