@@ -20,7 +20,7 @@
 // import * as mobilenet from '@tensorflow-models/mobilenet';
 
 const input = document.getElementById('imagenseleccionada');
-const mostrar = document.getElementById('mostrar');
+const mostrar = document.getElementById('img');
 
 input.addEventListener('input', () => {
   if(input.files && input.files[0]){

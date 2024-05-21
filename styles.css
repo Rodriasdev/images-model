@@ -5,8 +5,45 @@
 .imagen {
     display: flex;
     justify-content: center;
+    align-items: end;
 }
 .imagen img {
     width: 400px;
     height: 400px;
 }
+
+.imagen input{
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+.resultado {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.resultado p {
+    text-align: center;
+}
+
+.resultado button:hover {
+    padding: 20px;
+    transition: 300ms;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+}
+.boton button {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: aqua;
+    color: black;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+
