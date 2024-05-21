@@ -24,9 +24,6 @@
     flex-direction: column;
 }
 
-.resultado p {
-    text-align: center;
-}
 
 .resultado button:hover {
     padding: 20px;
@@ -40,10 +37,10 @@
 .boton button {
     padding: 15px;
     border-radius: 10px;
-    background-color: aqua;
+    background-color: gray;
     color: black;
-    font-size: 15px;
-    border: none;
+    font-size: 20px;
+    border: solid black;
     cursor: pointer;
 }
 
@@ -63,6 +60,9 @@
     width: 60%;
     border: solid black;
 }
+.contenedorTabla h3{
+    color: black;
+}
 
 .columna1 {
     display: flex;
@@ -72,6 +72,12 @@
 .columna1 div{
     display: flex;
     flex-direction: column;
+    padding-left: 40px;
+    text-align: start;
+}
+
+.columna1 h3{
+    padding-left: 30px;
 }
 
 .columna2 {
@@ -84,14 +90,6 @@
     flex-direction: column;
 }
 
-
-.predicciones {
-    padding-left: 10px
-}
-
-.probabilidad    {
-    padding-left: 10px
-}
 
 
 

@@ -56,7 +56,7 @@ botonint.addEventListener('click', async () => {
 
     resultProbability += 
     `
-    <p>${value.probability}</P>
+    <p>${value.probability}</p>
     `
   });
 
@@ -66,13 +66,13 @@ botonint.addEventListener('click', async () => {
   let contenedroTabla = `
     <div class="contenedorTabla">
       <div class="columna1">
-        <p>Predicciones:</p>
+        <h3>Predicciones:</h3>
         <div class="predicciones">
             ${resultPredict}
         </div>
         </div>
       <div class="columna2">
-        <p>Probabilidad</p>
+        <h3>Probabilidad:</h3>
         <div class="probabilidad">
             ${resultProbability}
         </div>
