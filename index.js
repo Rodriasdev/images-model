@@ -22,6 +22,7 @@
 const input = document.getElementById('imagenseleccionada');
 const mostrar = document.getElementById('img');
 const botonint = document.getElementById('botonint');
+const predicciones = document.getElementById('predicciones')
 
 input.addEventListener('input', () => {
   if(input.files && input.files[0]){
@@ -41,8 +42,18 @@ botonint.addEventListener('click', async () => {
   const version = 2;
   const alpha = 0.5;
 
-  const embedding = await run(version,alpha,img)
-  console.log(embedding);
+  const predict = await run(version,alpha,img)
+
+  let result = ''
+
+  predict.forEach(value => {
+    result += 
+    `
+    <p>${value.className}</p>
+    `
+  });
+
+  predicciones.innerHTML = result
 });
 
 
@@ -64,7 +75,7 @@ async function run(version, alpha, img) {
   // Get the embedding.
   const embedding = model.infer(img, true);
 
-  return embedding
+  return predictions
   // console.log('Embedding');
   // embedding.print(true);
 }
