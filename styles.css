@@ -46,10 +46,20 @@
     border: none;
     cursor: pointer;
 }
+
 .tabla{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.tabla div{
     background-color: black;
     color: white;
     font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    border-radius: 20px;
 }
 
 #predicciones {
