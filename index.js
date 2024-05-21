@@ -23,6 +23,7 @@ const input = document.getElementById('imagenseleccionada');
 const mostrar = document.getElementById('img');
 const botonint = document.getElementById('botonint');
 const predicciones = document.getElementById('predicciones')
+const probabilidad = document.getElementById('probabilidad')
 
 input.addEventListener('input', () => {
   if(input.files && input.files[0]){
@@ -49,7 +50,9 @@ botonint.addEventListener('click', async () => {
   predict.forEach(value => {
     result += 
     `
-    <p>${value.className}</p>
+
+      <p>${value.className}</p>
+
     `
   });
 
