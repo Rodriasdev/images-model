@@ -47,7 +47,8 @@
     cursor: pointer;
 }
 
-.tabla{
+
+#tabla{
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -84,11 +85,11 @@
 }
 
 
-#predicciones {
+.predicciones {
     padding-left: 10px
 }
 
-#probabilidad    {
+.probabilidad    {
     padding-left: 10px
 }
 

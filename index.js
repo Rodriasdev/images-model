@@ -22,8 +22,7 @@
 const input = document.getElementById('imagenseleccionada');
 const mostrar = document.getElementById('img');
 const botonint = document.getElementById('botonint');
-const predicciones = document.getElementById('predicciones')
-const probabilidad = document.getElementById('probabilidad')
+const tabla = document.getElementById('tabla')
 
 input.addEventListener('input', () => {
   if(input.files && input.files[0]){
@@ -61,8 +60,26 @@ botonint.addEventListener('click', async () => {
     `
   });
 
-  predicciones.innerHTML = resultPredict
-  probabilidad.innerHTML = resultProbability
+  // predicciones.innerHTML = resultPredict
+  // probabilidad.innerHTML = resultProbability
+
+  let contenedroTabla = `
+    <div class="contenedorTabla">
+      <div class="columna1">
+        <p>Predicciones:</p>
+        <div class="predicciones">
+            ${resultPredict}
+        </div>
+        </div>
+      <div class="columna2">
+        <p>Probabilidad</p>
+        <div class="probabilidad">
+            ${resultProbability}
+        </div>
+      </div>
+    </div>
+  `
+  tabla.innerHTML = contenedroTabla
 });
 
 
