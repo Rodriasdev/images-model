@@ -45,18 +45,24 @@ botonint.addEventListener('click', async () => {
 
   const predict = await run(version,alpha,img)
 
-  let result = ''
+  let resultPredict = ''
+  let resultProbability = ''
 
   predict.forEach(value => {
-    result += 
+    resultPredict += 
+    `
+     <p>${value.className}</p>
+
     `
 
-      <p>${value.className}</p>
-
+    resultProbability += 
+    `
+    <p>${value.probability}</P>
     `
   });
 
-  predicciones.innerHTML = result
+  predicciones.innerHTML = resultPredict
+  probabilidad.innerHTML = resultProbability
 });
 
 
