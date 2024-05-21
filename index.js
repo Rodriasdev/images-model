@@ -21,6 +21,7 @@
 
 const input = document.getElementById('imagenseleccionada');
 const mostrar = document.getElementById('img');
+const botonint = document.getElementById('botonint');
 
 input.addEventListener('input', () => {
   if(input.files && input.files[0]){
@@ -35,13 +36,18 @@ input.addEventListener('input', () => {
   };
 });
 
-const img = document.getElementById('img');
-const version = 2;
-const alpha = 0.5;
+botonint.addEventListener('click', async () => {
+  const img = document.getElementById('img');
+  const version = 2;
+  const alpha = 0.5;
+
+  const embedding = await run(version,alpha,img)
+  console.log(embedding);
+});
 
 
 
-async function run() {
+async function run(version, alpha, img) {
   // Load the model.
   const model = await mobilenet.load({version, alpha});
 
@@ -57,8 +63,9 @@ async function run() {
 
   // Get the embedding.
   const embedding = model.infer(img, true);
-  console.log('Embedding');
-  embedding.print(true);
+
+  return embedding
+  // console.log('Embedding');
+  // embedding.print(true);
 }
 
-run();
